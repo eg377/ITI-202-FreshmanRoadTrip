@@ -100,7 +100,7 @@ public class Main{
 
 		while(welcome){
 			waitHere(1);
-			System.out.println("\nWelcome to The Freshmen Bus Roadtrip!\n");
+			System.out.println("\nWelcome to The Freshmen Bus Trip!\n");
 			waitHere(2);
 			while(q1Loop){
 				System.out.println("Are you ready to start your day at Rutgers University? y or n\n");
@@ -148,23 +148,113 @@ public class Main{
 	*/
 
 	public static void main(String[] args){
-		boolean playing = true;
-
+		//GAME STARTS HERE...
 		welcomePlayer();
+		
+//		boolean playing = true;
+
+//		welcomePlayer();
 		//----------- ignore stuff below ----------------
 		/*
 		//System.out.println("Here");
 	
 		//Random rand = new Random();
-
-
-		String[] bookbag = {};
-		String[] items = {"Powerbar", "apple", "banana", "textbook", "notebook", "pencil", "pen"};
-
-		
-
-		//GAME:
-		//while(playing){}
 		*/
+		 
+		// ALL OF THE CODE BELOW IS FOR THE BACKPACK. MIGHT NEED TO MAKE THE BACKPACK ITS OWN METHOD IF TOO LONG...
+		Scanner in2 = new Scanner(System.in);
+		String basicInput = "";
+		String useItem = "";
+		int currentHealth = startHealth;
+		double currentGPA = startGPA;
+		boolean usingBackpack = false;
+		boolean playingGame = true; 
+	
+		// Only filling the backpack with a few items so player can pick up items along the way.
+		String[] backpackArr = new String[7];
+			
+		backpackArr[0] = "powerbar";
+		backpackArr[1] = "apple";
+		backpackArr[2] = "textbook";
+		backpackArr[3] = "pencil";	
+	
+		while(playingGame == true) {
+			
+			waitHere(1);
+			System.out.println();
+			System.out.println("Don't forget to check your backpack with the 'b' key before you leave for class!");
+		
+			basicInput = in2.nextLine();
+			if (basicInput.equals("b")) {
+				usingBackpack = true;
+				
+				System.out.println("\nTo use one of the items in your backpack, just press any number between 0 and 6.");
+				
+				while (usingBackpack == true) {
+					System.out.println("");
+					for (int i = 0; i <= backpackArr.length-1; i++) {
+						if (backpackArr[i] != null) {
+							System.out.print("[" + i + "] " + backpackArr[i] + " ");
+						} else {
+							System.out.print("[" + i + "] " + "??? ");
+						}
+					}
+					
+					useItem = in2.nextLine();
+					
+						if (useItem.equals("0")) {
+							backpackArr[0] = "???";
+							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							System.out.println("Your energy increased a little!");
+							// Add to energy
+							printEnergyBar(currentHealth += 5);
+							// GPA is printed to keep the use updated
+							printGPABar(startGPA);
+						}
+							
+						if (useItem.equals("1")) {
+							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							backpackArr[1] = "???";
+							System.out.println("\nYour energy increased a little!");
+							// Add to energy
+							printEnergyBar(currentHealth += 10);
+							// GPA is printed to keep the use updated
+							printGPABar(startGPA);
+						}
+							
+						if (useItem.equals("2")) {
+							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							backpackArr[2] = "???";
+							// Energy is printed to keep the use updated
+							printEnergyBar(currentHealth);
+							System.out.println("Your GPA increased a little!");
+							// Add to GPA
+							printGPABar(currentGPA += 0.2);
+						}
+						
+						if (useItem.equals("3")) {
+							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							backpackArr[3] = "???";
+							// Energy is printed to keep the use updated
+							printEnergyBar(currentHealth);
+							// Add to GPA
+							printGPABar(currentGPA += 0.1);
+						}
+						
+						if (useItem.equals("4") || useItem.equals("5") || useItem.equals("6")) {
+							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							System.out.println("\nYou don't have anything here...");
+						}
+						
+						else if (useItem.equals("x")) {
+						
+							System.out.println("You closed your backpack.");
+							usingBackpack = false;
+							// Would like to be able to access backpack at any time during the game. Right now, backpack cannot be accessed after player closes it for the first time. Fix later.
+						}
+					}
+				}
+			break; // breaks out of while loop
+		}
 	}
 }
