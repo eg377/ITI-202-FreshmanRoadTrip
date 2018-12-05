@@ -119,6 +119,9 @@ public class Main{
 			// Continue story 
 			// Introduction of objective
 			waitHere(1);
+			
+			System.out.println("===========================================================================================================================================");
+			
 			System.out.println("\nAs a Rutgers students you need to need to maintain your energy level"+
 				" above 25%"+
 				" and GPA above a 2.0, otherwise you will have to meet with the DEAN!");
@@ -128,7 +131,7 @@ public class Main{
 				startGPA+" GPA and "+startHealth+"% of your energy.");
 
 			// First display of the bars
-			waitHere(4);
+			waitHere(2);
 			printEnergyBar(startHealth);
 			waitHere(2);
 			printGPABar(startGPA);
