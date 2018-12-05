@@ -189,6 +189,7 @@ public class Main{
 				usingBackpack = true;
 				
 				System.out.println("\nTo use one of the items in your backpack, just press any number between 0 and 6.");
+				System.out.println("Slots with ??? are empty.");
 				
 				while (usingBackpack == true) {
 					System.out.println("");
