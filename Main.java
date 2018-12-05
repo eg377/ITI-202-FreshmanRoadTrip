@@ -203,9 +203,9 @@ public class Main{
 					useItem = in2.nextLine();
 					
 						if (useItem.equals("0")) {
-							backpackArr[0] = "???";
 							System.out.println("\n**************************************"); // Trying to make the output easier to read
-							System.out.println("Your energy increased a little!");
+							System.out.println("\nYou ate the " + backpackArr[0] + ". Your energy increased a little!");
+							backpackArr[0] = "???";
 							// Add to energy
 							printEnergyBar(currentHealth += 5);
 							// GPA is printed to keep the use updated
@@ -214,8 +214,8 @@ public class Main{
 							
 						if (useItem.equals("1")) {
 							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							System.out.println("\nYou ate the " + backpackArr[1] + ". Your energy increased a little!");
 							backpackArr[1] = "???";
-							System.out.println("\nYour energy increased a little!");
 							// Add to energy
 							printEnergyBar(currentHealth += 10);
 							// GPA is printed to keep the use updated
@@ -224,16 +224,17 @@ public class Main{
 							
 						if (useItem.equals("2")) {
 							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							System.out.println("\nYou read the " + backpackArr[2] + ". Your GPA increased a little!");
 							backpackArr[2] = "???";
 							// Energy is printed to keep the use updated
 							printEnergyBar(currentHealth);
-							System.out.println("Your GPA increased a little!");
 							// Add to GPA
 							printGPABar(currentGPA += 0.2);
 						}
 						
 						if (useItem.equals("3")) {
 							System.out.println("\n**************************************"); // Trying to make the output easier to read
+							System.out.println("\nYou used the " + backpackArr[3] + ". Your GPA increased a little!");
 							backpackArr[3] = "???";
 							// Energy is printed to keep the use updated
 							printEnergyBar(currentHealth);
