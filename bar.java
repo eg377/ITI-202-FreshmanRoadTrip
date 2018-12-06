@@ -16,7 +16,7 @@ public class bar{
 		System.out.print("\nEnergy Bar: \n");
 
 		//	Top part of the bar
-		for(int i = 0; i < barCurrentPercentile; i++){
+		for(int i = 0; i < 50; i++){
 			System.out.print("-");
 		}
 		System.out.println();
@@ -24,21 +24,27 @@ public class bar{
 		//	Center of the bar
 		System.out.print("|");
 		for(int i = 0; i < barCurrentPercentile-1; i++){
-			System.out.print(" ");
+			System.out.print("*");
 		}
 		System.out.print("|");
 
+		for(int i = 0; i < 50-barCurrentPercentile-1; i++){
+			System.out.print(" ");
+		}
+		System.out.print("|");
 		// 	Bottom of the bar
 		System.out.println();
-		for(int i = 0; i < barCurrentPercentile; i++){
+		for(int i = 0; i < 50; i++){
 			System.out.print("-");
 		}
+		
 
 		// Prints the value below and at the end of the bar 
 		System.out.println();
 		for(int i = 0; i < barCurrentPercentile-1; i++){
 			System.out.print(" ");
 		}
+
 		System.out.println(currentPercentile+"%");
 	}
 
@@ -53,7 +59,7 @@ public class bar{
 		System.out.print("\nGPA Bar: \n");
 
 		//	Top part of the bar
-		for(int i = 0; i < barCurrentGPAvalue; i++){
+		for(int i = 0; i < 50; i++){
 			System.out.print("-");
 		}
 		System.out.println();
@@ -61,13 +67,17 @@ public class bar{
 		//	Center of the bar
 		System.out.print("|");
 		for(int i = 0; i < barCurrentGPAvalue-1; i++){
-			System.out.print(" ");
+			System.out.print("*");
 		}
 		System.out.print("|");
 
+		for(int i = 0; i < 50-barCurrentGPAvalue-2; i++){
+			System.out.print(" ");
+		}
+		System.out.print("|");
 		// 	Bottom of the bar
 		System.out.println();
-		for(int i = 0; i < barCurrentGPAvalue; i++){
+		for(int i = 0; i < 50; i++){
 			System.out.print("-");
 		}
 
