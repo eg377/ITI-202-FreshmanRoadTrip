@@ -7,6 +7,135 @@ public class bar{
 	static double startGPA = 3.0;
 	static int startHealth = 75;
 
+	public static void nextMenu(){
+		boolean loopNextMenu = true;
+		Scanner in = new Scanner(System.in);
+		System.out.println("[c] to continue");
+		while(loopNextMenu){
+			String q1 = in.nextLine();
+			if(q1.equals("c")){
+				loopNextMenu = false;
+			}
+		} 
+	}
+
+	public static void waitHere(int seconds){
+		try{
+			Thread.sleep(seconds*1000);
+		} catch(InterruptedException e){
+			e.printStackTrace();
+		}
+	}
+
+	public static void printMenu(){
+		System.out.println("\n==================== MENU =====================");
+
+		System.out.print("1. Type 'b' or 'bar' to see your energy and GPA bar.\n"+
+			"2. Type 'bp' or 'backpack' to open your bag.\n"+
+			"3. Type 'e' or 'exit' to close menu.\n");
+
+
+		System.out.println(" ");
+	}
+
+	public static void continuePlayer(){
+		Scanner in = new Scanner(System.in);
+		boolean loopContinuePlayer = true;
+		boolean loopContinuePlayer2 = true;
+		printMenu();
+		while(loopContinuePlayer){
+			String q1 = in.nextLine(); 
+			if(q1.equals("b") || q1.equals("bar") || q1.equals("Bar")){
+				printEnergyBar(Backpack.currentHealth);
+				printGPABar(Backpack.currentGPA);
+				waitHere(1);
+				if(loopContinuePlayer2 == false){
+					loopContinuePlayer = false; // end the loop once we get the response we want
+				}else{
+					printMenu();
+				}
+			}else if(q1.equals("bp") || q1.equals("backpack") || q1.equals("Backpack")){
+				Backpack.printBackpack();
+				waitHere(1);
+				if(loopContinuePlayer2 == false){
+					loopContinuePlayer = false; // end the loop once we get the response we want
+				}else{
+					printMenu();
+				}
+			}else if(q1.equals("e") || q1.equals("exit") || q1.equals("E")){
+				loopContinuePlayer2 = false;
+				loopContinuePlayer = false;
+			}else{
+				printMenu();
+			}
+		}
+	}
+
+	public static void welcomePlayer(){
+		// ignore code that is commented out for now
+		
+		// Start of the game
+
+		//boolean returnBol = false;
+
+		boolean welcome = true;
+		boolean q1Loop = true;
+		Scanner in = new Scanner(System.in);
+
+		while(welcome){
+			waitHere(1);
+			System.out.println("\nWelcome to The Freshmen Bus Trip!\n");
+			waitHere(1);
+			nextMenu();
+
+			while(q1Loop){
+				System.out.println("Are you ready to start your day at Rutgers University? y or n\n");
+				String q1 = in.nextLine(); 
+				//	Making sure q1 is lower case, in case user types Y or YES
+				q1 = q1.toLowerCase();
+				//System.out.println(q1);
+				
+				if(q1.equals("y") || q1.equals("yes")){
+					q1Loop = false; // end the loop once we get the response we want
+				}else{
+					System.out.println("Let me ask again.\n");
+				}
+			}
+
+			// Continue story 
+			// Introduction of objective
+			waitHere(1);
+			System.out.println("===================================================="+
+				"=======================================================================================");
+			System.out.println("\nAs a Rutgers students you need to need to maintain your energy level"+
+				" above 25%"+
+				" and GPA above a 2.0, otherwise you will have to meet with the DEAN!");
+			waitHere(2);
+			nextMenu();
+
+			System.out.println("\nYour goal is to make it to 3 classes with the largest amount of energy and maximum GPA.");
+			waitHere(2);
+			nextMenu();
+
+			System.out.println("\nAs you wake up in your dorm room to start the day you'll begin with a "+
+				startGPA+" GPA and "+startHealth+"% of your energy.");
+			waitHere(2);
+			nextMenu();
+			// First display of the bars
+			waitHere(2);
+			printEnergyBar(startHealth);
+			waitHere(2);
+			printGPABar(startGPA);
+			nextMenu();
+
+			//System.out.println();
+			//Main.waitHere(1);
+			//System.out.println("Don't forget to check your backpack with the 'b' key before you leave for class!");
+			
+			welcome = false;
+		}
+	}
+
 	public static void printEnergyBar(int currentPercentile){
 		//	Since the energy bar value can be anything from 0-100, divide the number 
 		//	by 2 so bar is not too larger, bc we use barCurrentPercentile to 
