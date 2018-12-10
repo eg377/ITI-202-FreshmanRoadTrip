@@ -20,11 +20,11 @@
 			
 			while(playingGame == true) {
 			
-				//actionInput = in2.nextLine();
+				actionInput = in2.nextLine();
 				
-				//if (actionInput.equals("b")) {
+				if (actionInput.equals("b")) {
 					
-					//System.out.println("\nTo use one of the items in your backpack, just press any number between 0 and 6.\nSlots with ??? are empty.");
+					System.out.println("\nTo use one of the items in your backpack, just press any number between 0 and 6.\nSlots with ??? are empty.");
 					
 						System.out.println("");
 						
@@ -36,13 +36,13 @@
 							}
 			
 						}
-						playingGame = false;
-				//}
+				}
 				
-				//else {
-				//	backpackInput = Integer.parseInt(actionInput); // Assumes that the player is trying to use an item instead of looking in backpack.
-				//	useItem();
-				//} 
+				else {
+					backpackInput = Integer.parseInt(actionInput); // Assumes that the player is trying to use an item instead of looking in backpack.
+					useItem();
+					break;
+				} 
 			}
 		} // end of printBackpack method
 
