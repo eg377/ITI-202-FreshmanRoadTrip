@@ -18,8 +18,8 @@ public class Main extends bar{
 
 	public static void main(String[] args){
 		//GAME STARTS HERE...
-		//welcomePlayer();
-		
+		welcomePlayer();
+		//hi
 		continuePlayer();
 		//Backpack.printBackpack();
 		//Backpack.useItem();
