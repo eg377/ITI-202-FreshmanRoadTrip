@@ -7,6 +7,18 @@ public class FRTmethods{
 	static double startGPA = 3.0;
 	static int startHealth = 75;
 
+	public static void nextMenu(){
+		boolean loopNextMenu = true;
+		Scanner in = new Scanner(System.in);
+		
+		while(loopNextMenu){
+			String q1 = in.nextLine();
+			if(q1.equals("c")){
+				loopNextMenu = false;
+			}
+		} 
+	}
+
 	public static void waitHere(int seconds){
 		try{
 			Thread.sleep(seconds*1000);
@@ -99,7 +111,7 @@ public class FRTmethods{
 		System.out.println(currentGPA+" GPA");
 	}
 
-	public static void backpackManger{
+	public static void backpackManger(){
 		String[] userBackpack = new String[7];
 		
 		String selectedItem = "";
@@ -115,7 +127,7 @@ public class FRTmethods{
 		switch(selectedItem){
 		
 		//IF THE USER HAS AND SELECTS TO USE A POWERBAR
-		case 1: selectedItem = "powerbar";
+		case 1: selectedItem = 0
 		System.out.println("\nYou ate the " + userBackpack[0] + ". Your energy increased a little!");
 		userBackpack[0] = "???";
 		// Add to energy
@@ -125,7 +137,7 @@ public class FRTmethods{
 		break;
 		
 		//IF THE USER HAS AND SELECTS TO USE AN APPLE
-		case 2: selectedItem = "apple";
+		case 2: selectedItem = 1
 		System.out.println("\nYou ate the " + userBackpack[1] + ". Your energy increased a little!");
 		backpackArr[1] = "???";
 		// Add to energy
@@ -135,7 +147,7 @@ public class FRTmethods{
 		break;
 		
 		//IF THE USER HAS AND SELECTS TO USE A TEXTBOOK
-		case 3: selectedItem = "textbook";
+		case 3: selectedItem = 2
 		System.out.println("\nYou read the " + userBackpack[2] + ". Your GPA increased a little!");
 		backpackArr[2] = "???";
 		// Energy is printed to keep the use updated
@@ -145,7 +157,7 @@ public class FRTmethods{
 		break;
 		
 		//IF THE USER HAS AND SELECTS TO USE A PENCIL
-		case 4: selectedItem = "pencil";
+		case 4: selectedItem = 3
 		System.out.println("\nYou used the " + userBackpack[3] + ". Your GPA increased a little!");
 		backpackArr[3] = "???";
 		// Energy is printed to keep the use updated
@@ -154,7 +166,7 @@ public class FRTmethods{
 		printGPABar(currentGPA += 0.1);
 		break;
 			
-		case 5: selectedItem = "???";
+		case 5: selectedItem = 4
 		System.out.println("\nYou don't have anything here... keep on questing!");
 		break;
 		
