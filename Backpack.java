@@ -2,32 +2,28 @@
 	import java.util.Random;
 	import java.util.concurrent.TimeUnit;
 	
-	public class Backpack {
+	public class Backpack extends Main {
 		
 		static Scanner in2 = new Scanner(System.in);
 		static String actionInput = "";
 		static int backpackInput;
 		static String useItem = "";
 		static int itemIndex = backpackInput;
-		static int currentHealth = Main.startHealth;  
-		static double currentGPA = Main.startGPA;  
+		static int currentHealth = startHealth;  
+		static double currentGPA = startGPA;  
 		static boolean playingGame = true; 
 		static String[] backpackArr = new String[] {"powerbar", "apple", "textbook", "pencil", "", "", ""};
+		static boolean bpPressed = true;
 			
 		
 		// printBackpack()
 		public static void printBackpack() {
 			
-			while(playingGame == true) {
-			
-				actionInput = in2.nextLine();
-				
-				if (actionInput.equals("b")) {
-					
 					System.out.println("\nTo use one of the items in your backpack, just press any number between 0 and 6.\nSlots with ??? are empty.");
 					
 						System.out.println("");
 						
+						//For loop prints backpack
 						for (int i = 0; i <= backpackArr.length-1; i++) {
 							if (backpackArr[i] != "") {
 								System.out.print("[" + i + "] " + backpackArr[i] + " ");
@@ -36,15 +32,10 @@
 							}
 			
 						}
-				}
-				
-				else {
-					backpackInput = Integer.parseInt(actionInput); // Assumes that the player is trying to use an item instead of looking in backpack.
-					useItem();
-					break;
-				} 
-			}
-		} // end of printBackpack method
+					// Automatically allows player to use item after looking in backpack
+					backpackInput = in2.nextInt();
+					useItem(backpackInput);
+			} // end of printBackpack method
 
 		// addItem
 		public static void addItem(String itemName) {
@@ -60,7 +51,7 @@
 		} // end of addItem method
 		
 		// useItem
-		public static void useItem() { // public static void useItem(int itemIndex)
+		public static void useItem(int itemIndex) { // public static void useItem(int itemIndex)
 			
 				if (backpackInput >= 0 && backpackInput <= 6 && backpackArr[backpackInput].length() > 0) { // Checks to see if player inputs a valid backpack slot and the slot actually has an item inside
 						System.out.println("You used the " + backpackArr[backpackInput] + ".");
@@ -71,46 +62,71 @@
 				}
 				
 				// ---- Status effects for items ----
+				// ADD MORE ITEMS AS NEEDED. THIS ALLOWS US TO MAKE SPECIFIC ITEMS HAVE THEIR OWN UNIQUE EFFECTS.
 				else if (backpackArr[backpackInput] == "powerbar") {
 					System.out.println("Your energy increased a little...");
 					currentHealth += 5;
+					if (currentHealth > 100) { // Keeps health from being higher than 100%
+						currentHealth = 100;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 					
 				else if (backpackArr[backpackInput] == "apple") {
-					System.out.println("Your health increased a little...");
-					currentHealth += 10;
+					System.out.println("Your energy increased a lot!");
+					currentHealth += 15;
+					if (currentHealth > 100) { // Keeps health from being higher than 100%
+						currentHealth = 100;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 					
 				else if (backpackArr[backpackInput] == "textbook") {
 					System.out.println("Your GPA increased a little...");
-					currentGPA += 0.5;
+					currentGPA += 0.3;
+					if (currentGPA > 4.0) { // Keeps GPA from being higher than 4.0
+						currentGPA = 4.0;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 					
 				else if (backpackArr[backpackInput] == "pencil") {
 					System.out.println("Your GPA increased a little...");
-					currentGPA += 2;
+					currentGPA += 0.1;
+					if (currentGPA > 4.0) { // Keeps GPA from being higher than 4.0
+						currentGPA = 4.0;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 					
 				else if (backpackArr[backpackInput] == "banana") {
-					System.out.println("Your health increased a little...");
-					currentHealth += 10;
+					System.out.println("Your health increased a lot!");
+					currentHealth += 15;
+					if (currentHealth > 100) { // Keeps health from being higher than 100%
+						currentHealth = 100;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 					
 				else if (backpackArr[backpackInput] == "energy drink") {
-					System.out.println("You got a huge GPA boost! ...But your health has decreased...");
-					currentGPA += 0.8;
-					currentHealth -= 10;
+					System.out.println("You got a huge energy boost! ...But your GPA has decreased...");
+					currentGPA -= 0.8;
+					currentHealth += 10;
+					if (currentHealth > 100) { // Keeps health from being higher than 100%
+						currentHealth = 100;
+					}
+					else if (currentGPA > 4.0) { // Keeps GPA from being higher than 4.0
+						currentGPA = 4.0;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 					
 				else if (backpackArr[backpackInput] == "laptop") {
 					System.out.println("You got a huge GPA boost!");
 					currentGPA += 0.9;
+					if (currentGPA > 4.0) { // Keeps GPA from being higher than 4.0
+						currentGPA = 4.0;
+					}
 					backpackArr[backpackInput] = ""; // item is removed from inventory
 				}
 
