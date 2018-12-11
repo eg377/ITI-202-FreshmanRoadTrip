@@ -111,68 +111,68 @@ public class FRTmethods{
 		System.out.println(currentGPA+" GPA");
 	}
 
-	public static void backpackManger(){
-		String[] userBackpack = new String[7];
-		
-		String selectedItem = "";
-		
-		userBackpack[0] = "powerbar";
-		userBackpack[1] = "apple";
-		userBackpack[2] = "textbook";
-		userBackpack[3] = "pencil";	
-		userBackpack[4] = "???";	
-		userBackpack[5] = "???";	
-		userBackpack[6] = "???";
-
-		switch(selectedItem){
-		
-		//IF THE USER HAS AND SELECTS TO USE A POWERBAR
-		case 1: selectedItem = 0
-		System.out.println("\nYou ate the " + userBackpack[0] + ". Your energy increased a little!");
-		userBackpack[0] = "???";
-		// Add to energy
-		printEnergyBar(currentHealth += 5);
-		//Bars should be printed
-		printGPABar(startGPA);
-		break;
-		
-		//IF THE USER HAS AND SELECTS TO USE AN APPLE
-		case 2: selectedItem = 1
-		System.out.println("\nYou ate the " + userBackpack[1] + ". Your energy increased a little!");
-		backpackArr[1] = "???";
-		// Add to energy
-		printEnergyBar(currentHealth += 10);
-		// GPA is printed to keep the use updated
-		printGPABar(startGPA);
-		break;
-		
-		//IF THE USER HAS AND SELECTS TO USE A TEXTBOOK
-		case 3: selectedItem = 2
-		System.out.println("\nYou read the " + userBackpack[2] + ". Your GPA increased a little!");
-		backpackArr[2] = "???";
-		// Energy is printed to keep the use updated
-		printEnergyBar(currentHealth);
-		// Add to GPA
-		printGPABar(currentGPA += 0.2);
-		break;
-		
-		//IF THE USER HAS AND SELECTS TO USE A PENCIL
-		case 4: selectedItem = 3
-		System.out.println("\nYou used the " + userBackpack[3] + ". Your GPA increased a little!");
-		backpackArr[3] = "???";
-		// Energy is printed to keep the use updated
-		printEnergyBar(currentHealth);
-		// Add to GPA
-		printGPABar(currentGPA += 0.1);
-		break;
-			
-		case 5: selectedItem = 4
-		System.out.println("\nYou don't have anything here... keep on questing!");
-		break;
-		
-		}
-		
-	}
+//	public static void backpackManger(){
+//		String[] userBackpack = new String[7];
+//		
+//		String selectedItem = "";
+//		
+//		userBackpack[0] = "powerbar";
+//		userBackpack[1] = "apple";
+//		userBackpack[2] = "textbook";
+//		userBackpack[3] = "pencil";	
+//		userBackpack[4] = "???";	
+//		userBackpack[5] = "???";	
+//		userBackpack[6] = "???";
+//
+//		switch(selectedItem){
+//		
+//		//IF THE USER HAS AND SELECTS TO USE A POWERBAR
+//		case 1: selectedItem = 0
+//		System.out.println("\nYou ate the " + userBackpack[0] + ". Your energy increased a little!");
+//		userBackpack[0] = "???";
+//		// Add to energy
+//		printEnergyBar(currentHealth += 5);
+//		//Bars should be printed
+//		printGPABar(startGPA);
+//		break;
+//		
+//		//IF THE USER HAS AND SELECTS TO USE AN APPLE
+//		case 2: selectedItem = 1
+//		System.out.println("\nYou ate the " + userBackpack[1] + ". Your energy increased a little!");
+//		backpackArr[1] = "???";
+//		// Add to energy
+//		printEnergyBar(currentHealth += 10);
+//		// GPA is printed to keep the use updated
+//		printGPABar(startGPA);
+//		break;
+//		
+//		//IF THE USER HAS AND SELECTS TO USE A TEXTBOOK
+//		case 3: selectedItem = 2
+//		System.out.println("\nYou read the " + userBackpack[2] + ". Your GPA increased a little!");
+//		backpackArr[2] = "???";
+//		// Energy is printed to keep the use updated
+//		printEnergyBar(currentHealth);
+//		// Add to GPA
+//		printGPABar(currentGPA += 0.2);
+//		break;
+//		
+//		//IF THE USER HAS AND SELECTS TO USE A PENCIL
+//		case 4: selectedItem = 3
+//		System.out.println("\nYou used the " + userBackpack[3] + ". Your GPA increased a little!");
+//		backpackArr[3] = "???";
+//		// Energy is printed to keep the use updated
+//		printEnergyBar(currentHealth);
+//		// Add to GPA
+//		printGPABar(currentGPA += 0.1);
+//		break;
+//			
+//		case 5: selectedItem = 4
+//		System.out.println("\nYou don't have anything here... keep on questing!");
+//		break;
+//		
+//		}
+//		
+//	}
 	
 	
 	
