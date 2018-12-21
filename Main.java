@@ -7,21 +7,12 @@ public class Main extends bar{
 	static double startGPA = 3.0;
 	static int startHealth = 75;
 
-	
-
-	// Next phase in the story can be coded here
-	/*
-	public static void storyArc1(){
-		
-	}
-	*/
-
 	public static void main(String[] args){
 		//GAME STARTS HERE...
 		welcomePlayer();
-		//hi
+		
 		continuePlayer();
-		//Backpack.printBackpack();
-		//Backpack.useItem();
+		storyArc1();
+		continuePlayer2();
 	}
 }
