@@ -7,6 +7,37 @@ public class bar{
 	static double startGPA = 3.0;
 	static int startHealth = 75;
 
+	public static void map(){
+		System.out.println(
+			"=================== Freshman RoadTrip Map ==================="+
+			"\n       _________            ______________"+
+			"\n       | Busch |------------| Livingston |" +
+			"\n       ---------            --------------"+
+			"\n             \\               /        \\"+
+			"\n              \\             /          \\"+
+			"\n               \\           /            \\"+
+			"\n                \\         /              \\"+
+			"\n            _______________        _________________"+
+			"\n            | College Ave |--------| Cook/Douglass |" +
+			"\n            ---------------        -----------------"+
+			"\n      "+
+			"\nKey: \t --- \t\t= bus route"+
+			"\n\t rectangle \t= bus stop"+
+			"\n"+
+			"\n============================================================"
+			);
+	}
+
+	public static void storyArc1(){
+		System.out.println("\nYou are located in your dormroom which is on Livingston campus.");
+		waitHere(2);
+		nextMenu();
+		map();
+		nextMenu();
+		System.out.println("\nCongrats! You now have a map.");
+		//nextMenu();
+	}
+
 	public static void nextMenu(){
 		boolean loopNextMenu = true;
 		Scanner in = new Scanner(System.in);
@@ -38,6 +69,19 @@ public class bar{
 		System.out.println(" ");
 	}
 
+	public static void printMenu2(){
+		//Added map
+		System.out.println("\n==================== MENU =====================");
+
+		System.out.print("1. Type 'b' or 'bar' to see your energy and GPA bar.\n"+
+			"2. Type 'bp' or 'backpack' to open your bag.\n"+
+			"3. Type 'm' or 'map' to open your map.\n"+
+			"4. Type 'e' or 'exit' to close menu.\n");
+
+
+		System.out.println(" ");
+	}
+
 	public static void continuePlayer(){
 		Scanner in = new Scanner(System.in);
 		boolean loopContinuePlayer = true;
@@ -56,6 +100,48 @@ public class bar{
 				}
 			}else if(q1.equals("bp") || q1.equals("backpack") || q1.equals("Backpack")){
 				Backpack.printBackpack();
+				waitHere(1);
+				if(loopContinuePlayer2 == false){
+					loopContinuePlayer = false; // end the loop once we get the response we want
+				}else{
+					printMenu();
+				}
+			}else if(q1.equals("e") || q1.equals("exit") || q1.equals("E")){
+				loopContinuePlayer2 = false;
+				loopContinuePlayer = false;
+			}else{
+				printMenu();
+			}
+		}
+	}
+
+	public static void continuePlayer2(){
+		//Only difference here is that we add the map to the menu
+		Scanner in = new Scanner(System.in);
+		boolean loopContinuePlayer = true;
+		boolean loopContinuePlayer2 = true;
+		printMenu2();
+		while(loopContinuePlayer){
+			String q1 = in.nextLine(); 
+			if(q1.equals("b") || q1.equals("bar") || q1.equals("Bar")){
+				printEnergyBar(Backpack.currentHealth);
+				printGPABar(Backpack.currentGPA);
+				waitHere(1);
+				if(loopContinuePlayer2 == false){
+					loopContinuePlayer = false; // end the loop once we get the response we want
+				}else{
+					printMenu();
+				}
+			}else if(q1.equals("bp") || q1.equals("backpack") || q1.equals("Backpack")){
+				Backpack.printBackpack();
+				waitHere(1);
+				if(loopContinuePlayer2 == false){
+					loopContinuePlayer = false; // end the loop once we get the response we want
+				}else{
+					printMenu();
+				}
+			}else if(q1.equals("m") || q1.equals("map") || q1.equals("Map")){
+				map();
 				waitHere(1);
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
@@ -124,7 +210,7 @@ public class bar{
 			// First display of the bars
 			waitHere(2);
 			printEnergyBar(startHealth);
-			waitHere(2);
+			waitHere(1);
 			printGPABar(startGPA);
 			nextMenu();
 
@@ -132,6 +218,10 @@ public class bar{
 			//Main.waitHere(1);
 			//System.out.println("Don't forget to check your backpack with the 'b' key before you leave for class!");
 			
+			System.out.println("\nAfter every decision you make you will be prompt with a menu "+
+				"to help you navigate your way through The Freshmen Roadtrip!");
+			waitHere(2);
+			nextMenu();
 			welcome = false;
 		}
 	}
