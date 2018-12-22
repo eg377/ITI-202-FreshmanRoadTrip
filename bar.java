@@ -702,9 +702,4 @@ public class bar {
 		printEnergyBar(startHealth);
 		printGPABar(startGPA);
 	}
-
-	public static void main(String[] args){
-		printEnergyBar(startHealth);
-		printGPABar(startGPA);
-	}
 }
