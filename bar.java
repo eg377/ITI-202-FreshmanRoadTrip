@@ -9,6 +9,7 @@ public class bar {
 	private static String currentLocation = "Livingston";
 	private static String currentStop = "Quads";
 	private static int classesAttended = 0;
+	private static int classes = 0;
 
 	public static void map(){
 		System.out.println(
@@ -169,7 +170,7 @@ public class bar {
 			currentStop = "Business Building";
 
 			System.out.println("\nYour energy went down, but your GPA is up!");
-			
+			classes += 1;
 			startHealth -= 10;
 			startGPA += .2;
 			
@@ -189,6 +190,7 @@ public class bar {
 			int randomInt1 = random1.nextInt((9 - 0) + 1);
 			if(randomInt1<4){
 				System.out.println("\nCongrats. You made it to your second class!");
+				classes +=1;
 				nextMenu();
 				randomItem();
 				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
@@ -225,6 +227,9 @@ public class bar {
 					System.out.println("\nHopefully you'll make the bus!");
 					sa2a2 = false;
 				}else{
+					System.out.println("\nOh NO! Your GPA is dropping");
+					startGPA-=.2;
+					printGPABar(startGPA);
 					System.out.println("\nAre you sure? This is your last chance!");
 				}
 			}
@@ -234,6 +239,8 @@ public class bar {
 			int randomInt2 = random2.nextInt((9 - 0) + 1);
 			if(randomInt2<4){
 				System.out.println("\nCongrats. You made it to your second class!");
+				classes+=1;
+				System.out.println(classes);
 				nextMenu();
 				randomItem();
 				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
@@ -247,6 +254,7 @@ public class bar {
 				continuePlayer2();
 			}else{
 				System.out.println("\nYou missed the bus!");
+				System.out.println(classes);
 				nextMenu();
 				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
@@ -260,6 +268,10 @@ public class bar {
 			}
 
 			System.out.println("\nCongrats you made it through your Freshmen RoadTrip!");
+			System.out.println("\nHere's how you did:");
+			System.out.println("\n\tClasses attended: "+classes);
+			System.out.println("\n\tEnergy: "+startHealth+"%");
+			System.out.println("\n\tGPA: "+startGPA);
 		}
 	}
 
