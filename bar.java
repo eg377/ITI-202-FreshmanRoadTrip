@@ -161,8 +161,9 @@ public class bar {
 			randomItem();
 		
 			System.out.println("\nYou finally made it back to your dorm room at the Quads.");
-		}else if () {
+		}else if (in1ans == 1) {
 			System.out.println("\nYou made it the Business Building for your first class.");
+			nextMenu();
 			currentStop = "Business Building";
 			System.out.println("\nYour energy went down, but your GPA is up!");
 			startHealth -= 10;
@@ -272,7 +273,7 @@ public class bar {
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
 				}else{
-					printMenu();
+					printMenu2();
 				}
 			}else if(q1.equals("bp") || q1.equals("backpack") || q1.equals("Backpack")){
 				Backpack.printBackpack();
@@ -280,7 +281,7 @@ public class bar {
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
 				}else{
-					printMenu();
+					printMenu2();
 				}
 			}else if(q1.equals("m") || q1.equals("map") || q1.equals("Map")){
 				map();
@@ -288,13 +289,13 @@ public class bar {
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
 				}else{
-					printMenu();
+					printMenu2();
 				}
 			}else if(q1.equals("e") || q1.equals("exit") || q1.equals("E")){
 				loopContinuePlayer2 = false;
 				loopContinuePlayer = false;
 			}else{
-				printMenu();
+				printMenu2();
 			}
 		}
 	}
