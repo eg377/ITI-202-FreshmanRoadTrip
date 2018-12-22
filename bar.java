@@ -75,7 +75,21 @@ public class bar {
 		// Start off in the dorm on livingston (quad 1 bus stop)
 		System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
 		nextMenu();
-		
+		System.out.println("\nHowever, you should bring up your energy before going to class");
+		nextMenu();
+		System.out.println("\nDo you want to go to Brower Dining Hall?");
+		Scanner in = new Scanner(System.in);
+		boolean sa2a1 = true;
+		while(sa2a1){
+			String q1 = in.nextLine();
+			if(q1.equals("yes") || q1.equals("y")){
+				System.out.println("\nGood choice ");
+				sa2a1 = false;
+			}else{
+				System.out.println("Are you sure?");
+			}
+		}
+
 		waitHere(1);
 		// Walks to Livingston Dining hall
 		System.out.println("\nYou just arrived at Livingston Dining Hall.");
