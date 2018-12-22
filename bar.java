@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class bar{
+public class bar { 
 
 	static double startGPA = 3.0;
 	static int startHealth = 75;
@@ -43,6 +43,70 @@ public class bar{
 		nextMenu();
 		System.out.println("\nCongrats! You now have a map.");
 		//nextMenu();
+	}
+	
+	public static void randomItem() {
+		
+		/* -----------  ALL AVAILABLE ITEMS HERE ----------- */ 
+		EnergyItem powerbar = new EnergyItem("powerbar", 10, "Your energy increased a little...");
+		EnergyItem apple = new EnergyItem("apple", 15, "Your energy increased a lot!");
+		EnergyItem banana = new EnergyItem("banana", 15, "Your energy increased a lot!");
+		EnergyItem coffee = new EnergyItem("coffee", 20, "You got a huge energy boost!");
+		GpaItem textbook = new GpaItem("textbook", 0.4, "Your GPA increased a lot!");
+		GpaItem pencil = new GpaItem("pencil", 0.1, "Your GPA increased a little...");
+		GpaItem notebook = new GpaItem("notebook", 0.2, "Your GPA increased a little...");
+		GpaItem calculator = new GpaItem("calculator", 0.3, "Your GPA increased a little...");
+	
+		
+		BackpackItem[] availableItems = new BackpackItem[]{powerbar, apple, banana, coffee, textbook, pencil, notebook, calculator, null, null}; // 2/10 chance of not finding an item
+
+		Random random = new Random();
+		int randomInt = random.nextInt((9 - 0) + 1); // Generates a random integer between 0 and 9 inclusive
+		
+		if (availableItems[randomInt] != null) {
+		
+			System.out.println("\nYou found an item: " + availableItems[randomInt]); // picks a random item from the list of available items
+			Backpack.addItem(availableItems[randomInt]); // automatically adds a random item to the backpack
+		} 
+	}
+	
+	public static void storyArc2() {
+		// Start off in the dorm on livingston (quad 1 bus stop)
+		System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
+		
+		// Walks to Livingston Dining hall
+		randomItem();
+	
+		// Goes to Plaza bus stop 
+		randomItem();
+		
+		// Gets of at college ave students center
+		randomItem();
+		
+		// Goes to alex library to study 
+		randomItem();
+		
+		// Then grabs a quick dinner at brower because he is running late to class on Busch
+		randomItem();
+		
+		// Gets of at the Hill center stop and goes to class
+		randomItem();
+		
+		// Then decides to go to the Werblin gym
+		randomItem();
+		
+		// Then catches the bus at the Busch student center
+		randomItem();
+		
+		// On his way to douglass student center to meet with a professor 
+		randomItem();
+		
+		// Eats from snack from his backpack, while he's hanging out with a friend at passion puddle 
+		randomItem();
+		
+		// Then he head back to Plaza Bus Stop, to go home
+		randomItem();
+
 	}
 
 	public static void nextMenu(){
