@@ -190,8 +190,8 @@ public class bar {
 			int randomInt1 = random1.nextInt((9 - 0) + 1);
 			if(randomInt1<4){
 				System.out.println("\nCongrats. You made it to your second class!");
-				currentLocation="Cook/Douglass"
-				currentStop="Douglass Student Center"
+				currentLocation="Cook/Douglass";
+				currentStop="Douglass Student Center";
 				classes +=1;
 				nextMenu();
 				randomItem();
@@ -243,8 +243,8 @@ public class bar {
 			int randomInt2 = random2.nextInt((9 - 0) + 1);
 			if(randomInt2<4){
 				System.out.println("\nCongrats. You made it to your third and last class!");
-				currentLocation="Busch"
-				currentStop="Hill Center"
+				currentLocation="Busch";
+				currentStop="Hill Center";
 				classes+=1;
 				System.out.println(classes);
 				nextMenu();
