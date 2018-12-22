@@ -37,12 +37,11 @@ public class bar {
 
 	public static void storyArc1(){
 		System.out.println("\nYou are located in your dorm room which is on Livingston campus.");
-		waitHere(2);
 		nextMenu();
 		map();
 		nextMenu();
 		System.out.println("\nCongrats! You now have a map.");
-		//nextMenu();
+		nextMenu();
 	}
 	
 	public static void randomItem() {
