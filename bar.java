@@ -67,6 +67,7 @@ public class bar {
 		
 			System.out.println("\nYou found an item: " + availableItems[randomInt]); // picks a random item from the list of available items
 			Backpack.addItem(availableItems[randomInt]); // automatically adds a random item to the backpack
+			nextMenu();
 		} 
 	}
 	
@@ -186,7 +187,10 @@ public class bar {
 			int randomInt1 = random1.nextInt((9 - 0) + 1);
 			if(randomInt1<4){
 				System.out.println("\nCongrats. You made it to your second class!");
+				nextMenu();
+				randomItem();
 				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
+				nextMenu();
 				startHealth -= 10;
 				startGPA += .2;
 			
@@ -196,6 +200,8 @@ public class bar {
 				continuePlayer2();
 			}else{
 				System.out.println("\nYou missed the bus!");
+				nextMenu();
+				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
 				startHealth -= 10;
 				startGPA -= .4;
