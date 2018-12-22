@@ -6,24 +6,31 @@ public class bar{
 
 	static double startGPA = 3.0;
 	static int startHealth = 75;
+	static String currentLocation = "Livingston";
+	static String currentStop = "Quads";
 
 	public static void map(){
 		System.out.println(
 			"=================== Freshman RoadTrip Map ==================="+
 			"\n       _________            ______________"+
-			"\n       | Busch |------------| Livingston |" +
-			"\n       ---------            --------------"+
-			"\n             \\               /        \\"+
-			"\n              \\             /          \\"+
+			"\n       | Busch |------------| Livingston |\tCurrent Location:"+
+			"\n       ---------            --------------\t   ---> "+currentLocation+
+			"\n             \\               /        \\\t\tCurrent Stop:"+
+			"\n              \\             /          \\\t   ---> "+currentStop+
 			"\n               \\           /            \\"+
 			"\n                \\         /              \\"+
 			"\n            _______________        _________________"+
 			"\n            | College Ave |--------| Cook/Douglass |" +
 			"\n            ---------------        -----------------"+
 			"\n      "+
-			"\nKey: \t --- \t\t= bus route"+
+			"\nKey:\t --- \t\t= bus route"+
 			"\n\t rectangle \t= bus stop"+
 			"\n"+
+			"\nStops:\tBusch:\t\tWerblin Gym\tHill Center\t\tBusch Student Center"+
+			"\n\tCollege Ave:\tStudent Center\tAlexander Library\tBrower Dining Hall"+
+			"\n\tLivingston:\tPlaza\t\tBusiness Building\tQuads "+
+			"\n\tCook/Douglas:\tPassion Puddle\tDouglass Student Center"+
+			"\n\t"+
 			"\n============================================================"
 			);
 	}
