@@ -177,6 +177,8 @@ public class bar {
 			printGPABar(startGPA);
 			
 			nextMenu();
+			System.out.println("\nHint: Make sure to use items!");
+			nextMenu();
 			continuePlayer2();
 
 			System.out.println("\nYou should hurry up to your next class by the Douglass Student Center!");
