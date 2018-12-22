@@ -246,7 +246,7 @@ public class bar {
 				currentLocation="Busch";
 				currentStop="Hill Center";
 				classes+=1;
-				System.out.println(classes);
+				//System.out.println(classes);
 				nextMenu();
 				randomItem();
 				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
@@ -260,7 +260,7 @@ public class bar {
 				continuePlayer2();
 			}else{
 				System.out.println("\nYou missed the bus!");
-				System.out.println(classes);
+				//System.out.println(classes);
 				nextMenu();
 				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
