@@ -329,8 +329,8 @@ public class bar {
 		while(loopContinuePlayer){
 			String q1 = in.nextLine(); 
 			if(q1.equals("b") || q1.equals("bar") || q1.equals("Bar")){
-				printEnergyBar(Backpack.startHealth);
-				printGPABar(Backpack.startGPA);
+				printEnergyBar(startHealth);
+				printGPABar(startGPA); //make Backpack.startGPA = to startGPA
 				waitHere(1);
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
@@ -363,8 +363,8 @@ public class bar {
 		while(loopContinuePlayer){
 			String q1 = in.nextLine(); 
 			if(q1.equals("b") || q1.equals("bar") || q1.equals("Bar")){
-				printEnergyBar(Backpack.startHealth);
-				printGPABar(Backpack.startGPA);
+				printEnergyBar(startHealth);
+				printGPABar(startGPA); //make Backpack.startGPA = to startGPA
 				waitHere(1);
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
