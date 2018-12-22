@@ -11,6 +11,16 @@ public class bar {
 	private static int classesAttended = 0;
 	private static int classes = 0;
 
+	public static void closeGame(){
+		System.out.println("\nCongrats you made it through your Freshmen RoadTrip!");
+		System.out.println("\nHere's how you did:");
+		System.out.println("\n\tClasses attended: "+classes+"/3");
+		System.out.println("\n\tEnergy: "+startHealth+"%");
+		System.out.println("\n\tGPA: "+startGPA);
+		System.out.println("\n");
+		System.out.println("We hope you play again!");
+	}
+
 	public static void map(){
 		System.out.println(
 			"=================== Freshman RoadTrip Map ==================="+
@@ -100,6 +110,124 @@ public class bar {
 				}
 			}
 
+			System.out.println("\nYou made it the Brower Dining Hall.");
+			nextMenu();
+			randomItem();
+			currentStop = "Brower Dining Hall";
+
+			System.out.println("\nYour energy went down, but your GPA is up!");
+			startHealth -= 10;
+			startGPA += .2;
+			nextMenu();
+			printEnergyBar(startHealth);
+			printGPABar(startGPA);
+
+			System.out.println("\nThanks to skipping class, now its time to eat!");
+			System.out.println("\nBut there goes the GPA...!");
+			nextMenu()
+			startHealth -= 10;
+			startGPA -=1;
+			printEnergyBar(startHealth);
+			printGPABar(startGPA);
+			
+			nextMenu();
+			System.out.println("\nHint: Make sure to use items!");
+			nextMenu();
+			continuePlayer2();
+
+			System.out.println("\nYou should hurry up to your next class by the Douglass Student Center!");
+			nextMenu();
+			System.out.println("\nYou'll have to run to catch the bus!!!");
+			nextMenu();
+			Random random1 = new Random();
+			int randomInt1 = random1.nextInt((9 - 0) + 1);
+			if(randomInt1<4){
+				System.out.println("\nCongrats. You made it to your second class!");
+				currentLocation="Cook/Douglass";
+				currentStop="Douglass Student Center";
+				classes +=1;
+				nextMenu();
+				randomItem();
+				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
+				nextMenu();
+				startHealth -= 10;
+				startGPA += .2;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}else{
+				System.out.println("\nYou missed the bus!");
+				nextMenu();
+				randomItem();
+				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
+				startHealth -= 10;
+				startGPA -= .4;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}
+
+			System.out.println("\nDo not worry though, you still have one more class to go to on Busch by Hill Center.");
+
+			Scanner in2 = new Scanner(System.in);
+			boolean sa2a2 = true;
+			while(sa2a2){
+				System.out.println("\nDo you want to go to your next class now? y/n");
+				String q1 = in2.nextLine();
+				if(q1.equals("yes") || q1.equals("y")){
+					System.out.println("\nHopefully you'll make the bus!");
+					sa2a2 = false;
+				}else{
+					System.out.println("\nOh NO! Your GPA is dropping");
+					startGPA-=.2;
+					nextMenu();
+					printGPABar(startGPA);
+					nextMenu();
+					System.out.println("\nAre you sure? This is your last chance!");
+				}
+			}
+
+			nextMenu();
+			Random random2 = new Random();
+			int randomInt2 = random2.nextInt((9 - 0) + 1);
+			if(randomInt2<4){
+				System.out.println("\nCongrats. You made it to your third and last class!");
+				currentLocation="Busch";
+				currentStop="Hill Center";
+				classes+=1;
+				//System.out.println(classes);
+				nextMenu();
+				randomItem();
+				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
+				nextMenu();
+				startHealth -= 10;
+				startGPA += .2;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}else{
+				System.out.println("\nYou missed the bus!");
+				//System.out.println(classes);
+				nextMenu();
+				randomItem();
+				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
+				startHealth -= 10;
+				startGPA -= .4;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}
+
+			closeGame();
+			/*
 			waitHere(1);
 			// Walks to Livingston Dining hall
 			System.out.println("\nYou just arrived at Livingston Dining Hall.");
@@ -163,6 +291,7 @@ public class bar {
 			randomItem();
 		
 			System.out.println("\nYou finally made it back to your dorm room at the Quads.");
+			*/
 		}else if (in1ans == 1) {
 			System.out.println("\nYou made it the Business Building for your first class.");
 			nextMenu();
@@ -273,11 +402,8 @@ public class bar {
 				continuePlayer2();
 			}
 
-			System.out.println("\nCongrats you made it through your Freshmen RoadTrip!");
-			System.out.println("\nHere's how you did:");
-			System.out.println("\n\tClasses attended: "+classes);
-			System.out.println("\n\tEnergy: "+startHealth+"%");
-			System.out.println("\n\tGPA: "+startGPA);
+			closeGame();
+			
 		}
 	}
 
