@@ -412,7 +412,7 @@ public class bar {
 		}
 	}
 
-	public static void nextMenu(){
+	private static void nextMenu(){
 		boolean loopNextMenu = true;
 		Scanner in = new Scanner(System.in);
 		System.out.println("[c] to continue");
@@ -424,7 +424,7 @@ public class bar {
 		} 
 	}
 
-	public static void waitHere(int seconds){
+	private static void waitHere(int seconds){
 		try{
 			Thread.sleep(seconds*1000);
 		} catch(InterruptedException e){
@@ -432,7 +432,7 @@ public class bar {
 		}
 	}
 
-	public static void printMenu(){
+	private static void printMenu(){
 		System.out.println("\n==================== MENU =====================");
 
 		System.out.print("1. Type 'b' or 'bar' to see your energy and GPA bar.\n"+
@@ -443,7 +443,7 @@ public class bar {
 		System.out.println(" ");
 	}
 
-	public static void printMenu2(){
+	private static void printMenu2(){
 		//Added map
 		System.out.println("\n==================== MENU =====================");
 
@@ -456,7 +456,7 @@ public class bar {
 		System.out.println(" ");
 	}
 
-	public static void continuePlayer(){
+	private static void continuePlayer(){
 		Scanner in = new Scanner(System.in);
 		boolean loopContinuePlayer = true;
 		boolean loopContinuePlayer2 = true;
@@ -489,7 +489,7 @@ public class bar {
 		}
 	}
 
-	public static void continuePlayer2(){
+	private static void continuePlayer2(){
 		//Only difference here is that we add the map to the menu
 		Scanner in = new Scanner(System.in);
 		boolean loopContinuePlayer = true;
@@ -600,7 +600,7 @@ public class bar {
 		}
 	}
 
-	public static void printEnergyBar(int currentPercentile){
+	private static void printEnergyBar(int currentPercentile){
 		//	Since the energy bar value can be anything from 0-100, divide the number 
 		//	by 2 so bar is not too larger, bc we use barCurrentPercentile to 
 		//	determine how many dashes to print for the bar
@@ -641,7 +641,7 @@ public class bar {
 		System.out.println(currentPercentile+"%");
 	}
 
-	public static void printGPABar(double startGPA){
+	private static void printGPABar(double startGPA){
 		//	Since the GPA value value can be anything from 0-4, multiply the number 
 		//	by 12.5 so bar is not too short.
 		// 	Reason for 12.5 bc 50/4 = 12.5
