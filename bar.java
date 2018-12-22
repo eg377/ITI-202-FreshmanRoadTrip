@@ -229,7 +229,9 @@ public class bar {
 				}else{
 					System.out.println("\nOh NO! Your GPA is dropping");
 					startGPA-=.2;
+					nextMenu();
 					printGPABar(startGPA);
+					nextMenu();
 					System.out.println("\nAre you sure? This is your last chance!");
 				}
 			}
