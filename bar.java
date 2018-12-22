@@ -4,10 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 public class bar { 
 
-	static double startGPA = 3.0;
-	static int startHealth = 75;
-	static String currentLocation = "Livingston";
-	static String currentStop = "Quads";
+	private static double startGPA = 3.0;
+	private static int startHealth = 75;
+	private static String currentLocation = "Livingston";
+	private static String currentStop = "Quads";
 
 	public static void map(){
 		System.out.println(
