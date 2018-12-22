@@ -681,6 +681,27 @@ public class bar {
 		}
 		System.out.println(startGPA+" GPA");
 	}
+	
+	public static int getStartHealth() {
+		return bar.startHealth;
+	}
+
+	public static void setStartHealth(int startHealth) {
+		bar.startHealth = startHealth;
+	}
+
+	public static double getStartGPA() {
+		return bar.startGPA;
+	}
+
+	public static void setStartGPA(double startGPA) {
+		bar.startGPA = startGPA;
+	}
+
+	public static void main(String[] args){
+		printEnergyBar(startHealth);
+		printGPABar(startGPA);
+	}
 
 	public static void main(String[] args){
 		printEnergyBar(startHealth);

@@ -2,7 +2,7 @@
 	import java.util.Random;
 	import java.util.concurrent.TimeUnit; 
 	
-	public class Backpack extends Main {
+	public class Backpack extends bar {
 		
 		static Scanner in2 = new Scanner(System.in);
 		static String actionInput = "";
@@ -73,15 +73,15 @@
 					System.out.println("\nYou used the " + selectedItem + ".");
 					
 					System.out.println(selectedItem.getEffectDescription());
-					startHealth += selectedItem.getEnergyEffect(); // increases health if HealthItem
-					startGPA += selectedItem.getGpaEffect(); // increases GPA if GpaItem
+					setStartHealth(getStartHealth() + selectedItem.getEnergyEffect()); // increases health if HealthItem
+					setStartGPA(getStartGPA() + selectedItem.getGpaEffect()); // increases GPA if GpaItem
 					
-					if (startHealth >= 100) {
-						startHealth = 100;
+					if (getStartHealth() >= 100) {
+						setStartHealth(100);
 					}
 					
-					if (startGPA >= 4.0) {
-						startGPA = 4.0;
+					if (getStartGPA() >= 4.0) {
+						setStartGPA(4.0);
 					}
 					
 					backpackArr[backpackInput] = null; // item is removed from inventory
