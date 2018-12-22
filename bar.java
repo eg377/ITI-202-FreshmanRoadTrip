@@ -71,6 +71,7 @@ public class bar {
 	}
 	
 	public static void storyArc2() {
+		// Add story elements here...
 		// Start off in the dorm on livingston (quad 1 bus stop)
 		System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
 		
