@@ -18,7 +18,14 @@ public class bar {
 		System.out.println("\n\tEnergy: "+startHealth+"%");
 		System.out.println("\n\tGPA: "+startGPA);
 		System.out.println("\n");
-		System.out.println("We hope you play again!");
+		if(startHealth>25 && startGPA>2.0){
+			System.out.println("\nCongrats you do not have to see the Dean.");
+			waitHere(1);
+		}else{
+			System.out.println("\nLooks like you're going to have to see the DEAN!");
+			waitHere(2);
+		}
+		System.out.println("\nWe hope you play again!");
 	}
 
 	private static void map(){
@@ -304,7 +311,7 @@ public class bar {
 			System.out.println("\nYour energy went down, but your GPA is up!");
 			classes += 1;
 			startHealth -= 10;
-			startGPA += .2;
+			startGPA += 0.2;
 			
 			printEnergyBar(startHealth);
 			printGPABar(startGPA);
