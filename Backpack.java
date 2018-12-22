@@ -77,6 +77,15 @@
 					System.out.println(selectedItem.getEffectDescription());
 					currentHealth += selectedItem.getEnergyEffect(); // increases health if HealthItem
 					currentGPA += selectedItem.getGpaEffect(); // increases GPA if GpaItem
+					
+					if (currentHealth >= 100) {
+						currentHealth = 100;
+					}
+					
+					if (currentGPA >= 4.0) {
+						currentGPA = 4.0;
+					}
+					
 					backpackArr[backpackInput] = null; // item is removed from inventory
 				}
 			} // end of Backpack useItem method
