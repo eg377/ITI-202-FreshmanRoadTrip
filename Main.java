@@ -4,15 +4,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends bar{
 
-	static double startGPA = 3.0;
-	static int startHealth = 75;
+	static double startGPA = getStartGPA();
+	static int startHealth = getStartHealth();
 
 	public static void main(String[] args){
 		//GAME STARTS HERE...
 		welcomePlayer();
-		continuePlayer();
 		storyArc1();
-		continuePlayer2();
 		storyArc2();
 	}
 }
