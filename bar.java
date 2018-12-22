@@ -214,6 +214,52 @@ public class bar {
 				continuePlayer2();
 			}
 
+			System.out.println("\nDo not worry though, you still have one more class to go to.");
+
+			Scanner in2 = new Scanner(System.in);
+			boolean sa2a2 = true;
+			while(sa2a2){
+				System.out.println("\nDo you want to go to your next class now? y/n");
+				String q1 = in2.nextLine();
+				if(q1.equals("yes") || q1.equals("y")){
+					System.out.println("\nHopefully you'll make the bus!");
+					sa2a2 = false;
+				}else{
+					System.out.println("\nAre you sure? This is your last chance!");
+				}
+			}
+
+			nextMenu();
+			Random random2 = new Random();
+			int randomInt2 = random2.nextInt((9 - 0) + 1);
+			if(randomInt2<4){
+				System.out.println("\nCongrats. You made it to your second class!");
+				nextMenu();
+				randomItem();
+				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
+				nextMenu();
+				startHealth -= 10;
+				startGPA += .2;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}else{
+				System.out.println("\nYou missed the bus!");
+				nextMenu();
+				randomItem();
+				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
+				startHealth -= 10;
+				startGPA -= .4;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}
+
+			System.out.println("\nCongrats you made it through your Freshmen RoadTrip!");
 		}
 	}
 
