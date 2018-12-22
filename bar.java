@@ -8,6 +8,7 @@ public class bar {
 	private static int startHealth = 75;
 	private static String currentLocation = "Livingston";
 	private static String currentStop = "Quads";
+	private static int classesAttended = 0;
 
 	public static void map(){
 		System.out.println(
@@ -79,7 +80,7 @@ public class bar {
 		int in1ans = in1.nextInt();
 		//System.out.println(in1ans);
 
-		if(in1ans == 1){
+		if(in1ans == 2){
 			System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
 			nextMenu();
 			System.out.println("\nHowever, you should bring up your energy before going to class");
@@ -160,7 +161,19 @@ public class bar {
 			randomItem();
 		
 			System.out.println("\nYou finally made it back to your dorm room at the Quads.");
-		}else{
+		}else if () {
+			System.out.println("\nYou made it the Business Building for your first class.");
+			currentStop = "Business Building";
+			System.out.println("\nYour energy went down, but your GPA is up!");
+			startHealth -= 10;
+			startGPA += .2;
+			printEnergyBar(startHealth);
+			printGPABar(startGPA);
+			nextMenu();
+			continuePlayer2();
+
+		}
+		else{
 
 		}
 		
