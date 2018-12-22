@@ -164,21 +164,22 @@ public class bar {
 		}else if (in1ans == 1) {
 			System.out.println("\nYou made it the Business Building for your first class.");
 			nextMenu();
+
 			currentStop = "Business Building";
+
 			System.out.println("\nYour energy went down, but your GPA is up!");
+			
 			startHealth -= 10;
 			startGPA += .2;
+			
 			printEnergyBar(startHealth);
 			printGPABar(startGPA);
+			
 			nextMenu();
 			continuePlayer2();
 
+			
 		}
-		else{
-
-		}
-		
-
 	}
 
 	public static void nextMenu(){
