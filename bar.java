@@ -93,10 +93,12 @@ public class bar {
 		//System.out.println(in1ans);
 
 		if(in1ans == 2){
+			/*
 			System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
 			nextMenu();
 			System.out.println("\nHowever, you should bring up your energy before going to class");
 			nextMenu();
+			*/
 			Scanner in = new Scanner(System.in);
 			boolean sa2a1 = true;
 			while(sa2a1){
@@ -124,7 +126,7 @@ public class bar {
 
 			System.out.println("\nThanks to skipping class, now its time to eat!");
 			System.out.println("\nBut there goes the GPA...!");
-			nextMenu()
+			nextMenu();
 			startHealth -= 10;
 			startGPA -=1;
 			printEnergyBar(startHealth);
