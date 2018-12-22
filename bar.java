@@ -330,7 +330,7 @@ public class bar {
 				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
 				nextMenu();
 				startHealth -= 10;
-				startGPA += .2;
+				startGPA += 0.2;
 			
 				printEnergyBar(startHealth);
 				printGPABar(startGPA);
@@ -343,7 +343,7 @@ public class bar {
 				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
 				startHealth -= 10;
-				startGPA -= .4;
+				startGPA -= 0.4;
 			
 				printEnergyBar(startHealth);
 				printGPABar(startGPA);
@@ -363,7 +363,7 @@ public class bar {
 					sa2a2 = false;
 				}else{
 					System.out.println("\nOh NO! Your GPA is dropping");
-					startGPA-=.2;
+					startGPA-=0.2;
 					nextMenu();
 					printGPABar(startGPA);
 					nextMenu();
@@ -385,7 +385,7 @@ public class bar {
 				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
 				nextMenu();
 				startHealth -= 10;
-				startGPA += .2;
+				startGPA += 0.2;
 			
 				printEnergyBar(startHealth);
 				printGPABar(startGPA);
@@ -399,7 +399,7 @@ public class bar {
 				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
 				startHealth -= 10;
-				startGPA -= .4;
+				startGPA -= 0.4;
 			
 				printEnergyBar(startHealth);
 				printGPABar(startGPA);
