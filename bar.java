@@ -36,7 +36,7 @@ public class bar {
 	}
 
 	public static void storyArc1(){
-		System.out.println("\nYou are located in your dormroom which is on Livingston campus.");
+		System.out.println("\nYou are located in your dorm room which is on Livingston campus.");
 		waitHere(2);
 		nextMenu();
 		map();
@@ -71,42 +71,75 @@ public class bar {
 	}
 	
 	public static void storyArc2() {
+		waitHere(2);
 		// Add story elements here...
 		// Start off in the dorm on livingston (quad 1 bus stop)
 		System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
+		nextMenu();
 		
+		waitHere(1);
 		// Walks to Livingston Dining hall
+		System.out.println("\nYou just arrived at Livingston Dining Hall.");
+		nextMenu();
 		randomItem();
 	
+		waitHere(1);
 		// Goes to Plaza bus stop 
+		System.out.println("\nYou just arrived at Livingston Plaza.");
+		nextMenu();
 		randomItem();
 		
+		waitHere(1);
 		// Gets of at college ave students center
+		System.out.println("\nYou just arrived at the College Avenue Student Center.");
+		nextMenu();
 		randomItem();
 		
-		// Goes to alex library to study 
+		waitHere(1);
+		// Goes to alex library to study
+		System.out.println("\nYou just arrived at the Alexander Library.");
 		randomItem();
 		
+		waitHere(1);
 		// Then grabs a quick dinner at brower because he is running late to class on Busch
+		System.out.println("\nYou just arrived at Brower Dining Hall.");
 		randomItem();
 		
+		waitHere(1);
 		// Gets of at the Hill center stop and goes to class
+		System.out.println("\nYou just arrived at Hill Center.");
 		randomItem();
 		
+		waitHere(1);
 		// Then decides to go to the Werblin gym
+		System.out.println("\nYou just arrived at Werblin Gym.");
 		randomItem();
 		
+		waitHere(1);
 		// Then catches the bus at the Busch student center
+		System.out.println("\nYou just arrived at the Busch Student Center.");
+		randomItem();
+		nextMenu();
+		
+		waitHere(1);
+		// On his way to douglass student center to meet with a professor
+		System.out.println("\nYou just arrived at Douglass Student Center.");
+		nextMenu();
 		randomItem();
 		
-		// On his way to douglass student center to meet with a professor 
-		randomItem();
-		
+		waitHere(1);
 		// Eats from snack from his backpack, while he's hanging out with a friend at passion puddle 
+		System.out.println("\nYou just arrived at Passion Puddle.");
+		nextMenu();
 		randomItem();
 		
+		waitHere(1);
 		// Then he head back to Plaza Bus Stop, to go home
+		System.out.println("\nYou just arrived at Livingston Plaza.");
+		nextMenu();
 		randomItem();
+		
+		System.out.println("\nYou finally made it back to your dorm room at the Quads.");
 
 	}
 
