@@ -164,7 +164,7 @@ public class bar {
 		}else if (in1ans == 1) {
 			System.out.println("\nYou made it the Business Building for your first class.");
 			nextMenu();
-
+			randomItem();
 			currentStop = "Business Building";
 
 			System.out.println("\nYour energy went down, but your GPA is up!");
@@ -178,7 +178,34 @@ public class bar {
 			nextMenu();
 			continuePlayer2();
 
+			System.out.println("\nYou should hurry up to your next class by the Douglass Student Center!");
+			nextMenu();
+			System.out.println("\nYou'll have to run to catch the bus!!!");
+			nextMenu();
+			Random random1 = new Random();
+			int randomInt1 = random1.nextInt((9 - 0) + 1);
+			if(randomInt1<4){
+				System.out.println("\nCongrats. You made it to your second class!");
+				System.out.println("\nHowever you wasted a lot of energy! Nice GPA though.");
+				startHealth -= 10;
+				startGPA += .2;
 			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}else{
+				System.out.println("\nYou missed the bus!");
+				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
+				startHealth -= 10;
+				startGPA -= .4;
+			
+				printEnergyBar(startHealth);
+				printGPABar(startGPA);
+				nextMenu();
+				continuePlayer2();
+			}
+
 		}
 	}
 
