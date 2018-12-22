@@ -115,6 +115,7 @@ public class bar {
 			System.out.println("\nYou made it the Brower Dining Hall.");
 			nextMenu();
 			randomItem();
+			currentLocation = "College Avenue";
 			currentStop = "Brower Dining Hall";
 
 			System.out.println("\nYour energy went down for walking to the dining hall.");
@@ -158,6 +159,7 @@ public class bar {
 				nextMenu();
 				continuePlayer2();
 			}else{
+				System.out.println("\nBad luck.");
 				System.out.println("\nYou missed the bus!");
 				nextMenu();
 				randomItem();
@@ -212,6 +214,7 @@ public class bar {
 				nextMenu();
 				continuePlayer2();
 			}else{
+				System.out.println("\nBad luck.");
 				System.out.println("\nYou missed the bus!");
 				//System.out.println(classes);
 				nextMenu();
@@ -334,6 +337,7 @@ public class bar {
 				nextMenu();
 				continuePlayer2();
 			}else{
+				System.out.println("\nBad luck.");
 				System.out.println("\nYou missed the bus!");
 				nextMenu();
 				randomItem();
@@ -388,6 +392,7 @@ public class bar {
 				nextMenu();
 				continuePlayer2();
 			}else{
+				System.out.println("\nBad luck.");
 				System.out.println("\nYou missed the bus!");
 				//System.out.println(classes);
 				nextMenu();
