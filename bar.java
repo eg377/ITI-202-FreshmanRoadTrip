@@ -117,12 +117,10 @@ public class bar {
 			randomItem();
 			currentStop = "Brower Dining Hall";
 
-			System.out.println("\nYour energy went down, but your GPA is up!");
+			System.out.println("\nYour energy went down for walking to the dining hall.");
 			startHealth -= 10;
-			startGPA += .2;
 			nextMenu();
 			printEnergyBar(startHealth);
-			printGPABar(startGPA);
 
 			System.out.println("\nThanks to skipping class, now its time to eat!");
 			System.out.println("\nBut there goes the GPA...!");
