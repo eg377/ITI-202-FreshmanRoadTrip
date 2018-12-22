@@ -10,9 +10,9 @@ public class Main extends bar{
 	public static void main(String[] args){
 		//GAME STARTS HERE...
 		welcomePlayer();
-		
 		continuePlayer();
 		storyArc1();
 		continuePlayer2();
+		storyArc2();
 	}
 }
