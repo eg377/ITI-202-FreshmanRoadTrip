@@ -72,86 +72,98 @@ public class bar {
 	public static void storyArc2() {
 		// Add story elements here...
 		// Start off in the dorm on livingston (quad 1 bus stop)
-		System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
-		nextMenu();
-		System.out.println("\nHowever, you should bring up your energy before going to class");
-		nextMenu();
-		System.out.println("\nDo you want to go to Brower Dining Hall?");
-		Scanner in = new Scanner(System.in);
-		boolean sa2a1 = true;
-		while(sa2a1){
-			String q1 = in.nextLine();
-			if(q1.equals("yes") || q1.equals("y")){
-				System.out.println("\nGood choice ");
-				sa2a1 = false;
-			}else{
-				System.out.println("Are you sure?");
-			}
-		}
+		System.out.println("\nDo you want to go to class or dinning hall? 1/2");
+		System.out.println("1:\tclass");
+		System.out.println("2:\tDining Hall");
+		Scanner in1 = new Scanner(System.in);
+		int in1ans = in1.nextInt();
+		//System.out.println(in1ans);
 
-		waitHere(1);
-		// Walks to Livingston Dining hall
-		System.out.println("\nYou just arrived at Livingston Dining Hall.");
-		nextMenu();
-		randomItem();
+		if(in1ans == 1){
+			System.out.println("\nYou decide to head outside to the Quad 1 bus stop. You want to get to Livingston Dining Hall.");
+			nextMenu();
+			System.out.println("\nHowever, you should bring up your energy before going to class");
+			nextMenu();
+			Scanner in = new Scanner(System.in);
+			boolean sa2a1 = true;
+			while(sa2a1){
+				System.out.println("\nDo you want to go to Brower Dining Hall? y/n");
+				String q1 = in.nextLine();
+				if(q1.equals("yes") || q1.equals("y")){
+					System.out.println("\nGood choice ");
+					sa2a1 = false;
+				}else{
+					System.out.println("Are you sure?");
+				}
+			}
+
+			waitHere(1);
+			// Walks to Livingston Dining hall
+			System.out.println("\nYou just arrived at Livingston Dining Hall.");
+			nextMenu();
+			randomItem();
 	
-		waitHere(1);
-		// Goes to Plaza bus stop 
-		System.out.println("\nYou just arrived at Livingston Plaza.");
-		nextMenu();
-		randomItem();
+			waitHere(1);
+			// Goes to Plaza bus stop 
+			System.out.println("\nYou just arrived at Livingston Plaza.");
+			nextMenu();
+			randomItem();
 		
-		waitHere(1);
-		// Gets of at college ave students center
-		System.out.println("\nYou just arrived at the College Avenue Student Center.");
-		nextMenu();
-		randomItem();
+			waitHere(1);
+			// Gets of at college ave students center
+			System.out.println("\nYou just arrived at the College Avenue Student Center.");
+			nextMenu();
+			randomItem();
 		
-		waitHere(1);
-		// Goes to alex library to study
-		System.out.println("\nYou just arrived at the Alexander Library.");
-		randomItem();
+			waitHere(1);
+			// Goes to alex library to study
+			System.out.println("\nYou just arrived at the Alexander Library.");
+			randomItem();
 		
-		waitHere(1);
-		// Then grabs a quick dinner at brower because he is running late to class on Busch
-		System.out.println("\nYou just arrived at Brower Dining Hall.");
-		randomItem();
+			waitHere(1);
+			// Then grabs a quick dinner at brower because he is running late to class on Busch
+			System.out.println("\nYou just arrived at Brower Dining Hall.");
+			randomItem();
 		
-		waitHere(1);
-		// Gets of at the Hill center stop and goes to class
-		System.out.println("\nYou just arrived at Hill Center.");
-		randomItem();
+			waitHere(1);
+			// Gets of at the Hill center stop and goes to class
+			System.out.println("\nYou just arrived at Hill Center.");
+			randomItem();
 		
-		waitHere(1);
-		// Then decides to go to the Werblin gym
-		System.out.println("\nYou just arrived at Werblin Gym.");
-		randomItem();
+			waitHere(1);
+			// Then decides to go to the Werblin gym
+			System.out.println("\nYou just arrived at Werblin Gym.");
+			randomItem();
 		
-		waitHere(1);
-		// Then catches the bus at the Busch student center
-		System.out.println("\nYou just arrived at the Busch Student Center.");
-		randomItem();
-		nextMenu();
+			waitHere(1);
+			// Then catches the bus at the Busch student center
+			System.out.println("\nYou just arrived at the Busch Student Center.");
+			randomItem();
+			nextMenu();
 		
-		waitHere(1);
-		// On his way to douglass student center to meet with a professor
-		System.out.println("\nYou just arrived at Douglass Student Center.");
-		nextMenu();
-		randomItem();
+			waitHere(1);
+			// On his way to douglass student center to meet with a professor
+			System.out.println("\nYou just arrived at Douglass Student Center.");
+			nextMenu();
+			randomItem();
 		
-		waitHere(1);
-		// Eats from snack from his backpack, while he's hanging out with a friend at passion puddle 
-		System.out.println("\nYou just arrived at Passion Puddle.");
-		nextMenu();
-		randomItem();
+			waitHere(1);
+			// Eats from snack from his backpack, while he's hanging out with a friend at passion puddle 
+			System.out.println("\nYou just arrived at Passion Puddle.");
+			nextMenu();
+			randomItem();
 		
-		waitHere(1);
-		// Then he head back to Plaza Bus Stop, to go home
-		System.out.println("\nYou just arrived at Livingston Plaza.");
-		nextMenu();
-		randomItem();
+			waitHere(1);
+			// Then he head back to Plaza Bus Stop, to go home
+			System.out.println("\nYou just arrived at Livingston Plaza.");
+			nextMenu();
+			randomItem();
 		
-		System.out.println("\nYou finally made it back to your dorm room at the Quads.");
+			System.out.println("\nYou finally made it back to your dorm room at the Quads.");
+		}else{
+
+		}
+		
 
 	}
 
