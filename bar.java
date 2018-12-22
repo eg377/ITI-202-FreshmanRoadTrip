@@ -343,7 +343,7 @@ public class bar {
 				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
 				startHealth -= 10;
-				startGPA -= 0.4;
+				startGPA -= 0.2;
 			
 				printEnergyBar(startHealth);
 				printGPABar(startGPA);
@@ -399,7 +399,7 @@ public class bar {
 				randomItem();
 				System.out.println("\nAnd you wasted a lot of energy! Bummer your GPA.");
 				startHealth -= 10;
-				startGPA -= 0.4;
+				startGPA -= 0.2;
 			
 				printEnergyBar(startHealth);
 				printGPABar(startGPA);
