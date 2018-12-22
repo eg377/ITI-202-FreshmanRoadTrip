@@ -269,8 +269,8 @@ public class bar {
 		while(loopContinuePlayer){
 			String q1 = in.nextLine(); 
 			if(q1.equals("b") || q1.equals("bar") || q1.equals("Bar")){
-				printEnergyBar(Backpack.currentHealth);
-				printGPABar(Backpack.currentGPA);
+				printEnergyBar(Backpack.startHealth);
+				printGPABar(Backpack.startGPA);
 				waitHere(1);
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
@@ -303,8 +303,8 @@ public class bar {
 		while(loopContinuePlayer){
 			String q1 = in.nextLine(); 
 			if(q1.equals("b") || q1.equals("bar") || q1.equals("Bar")){
-				printEnergyBar(Backpack.currentHealth);
-				printGPABar(Backpack.currentGPA);
+				printEnergyBar(Backpack.startHealth);
+				printGPABar(Backpack.startGPA);
 				waitHere(1);
 				if(loopContinuePlayer2 == false){
 					loopContinuePlayer = false; // end the loop once we get the response we want
@@ -446,13 +446,13 @@ public class bar {
 		System.out.println(currentPercentile+"%");
 	}
 
-	public static void printGPABar(double currentGPA){
+	public static void printGPABar(double startGPA){
 		//	Since the GPA value value can be anything from 0-4, multiply the number 
 		//	by 12.5 so bar is not too short.
 		// 	Reason for 12.5 bc 50/4 = 12.5
 		//	And 50 is the max value to we have reasonably sized bar for GPA, just like energy
 		// 	where the value is divided by 2 from the max possible of 100
-		double barCurrentGPAvalue = currentGPA*12.5; //0-50
+		double barstartGPAvalue = startGPA*12.5; //0-50
 		
 		System.out.print("\nGPA Bar: \n");
 
@@ -464,12 +464,12 @@ public class bar {
 
 		//	Center of the bar
 		System.out.print("|");
-		for(int i = 0; i < barCurrentGPAvalue-1; i++){
+		for(int i = 0; i < barstartGPAvalue-1; i++){
 			System.out.print("*");
 		}
 		System.out.print("|");
 
-		for(int i = 0; i < 50-barCurrentGPAvalue-2; i++){
+		for(int i = 0; i < 50-barstartGPAvalue-2; i++){
 			System.out.print(" ");
 		}
 		System.out.print("|");
@@ -481,10 +481,10 @@ public class bar {
 
 		// Prints the value below and at the end of the bar 
 		System.out.println();
-		for(int i = 0; i < barCurrentGPAvalue-1; i++){
+		for(int i = 0; i < barstartGPAvalue-1; i++){
 			System.out.print(" ");
 		}
-		System.out.println(currentGPA+" GPA");
+		System.out.println(startGPA+" GPA");
 	}
 
 	public static void main(String[] args){

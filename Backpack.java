@@ -9,8 +9,6 @@
 		static int backpackInput;
 		static String useItem = "";
 		static int itemIndex = backpackInput;
-		static int currentHealth = startHealth;  
-		static double currentGPA = startGPA;  
 		static boolean playingGame = true; 
 		static boolean bpPressed = true;
 		
@@ -75,15 +73,15 @@
 					System.out.println("\nYou used the " + selectedItem + ".");
 					
 					System.out.println(selectedItem.getEffectDescription());
-					currentHealth += selectedItem.getEnergyEffect(); // increases health if HealthItem
-					currentGPA += selectedItem.getGpaEffect(); // increases GPA if GpaItem
+					startHealth += selectedItem.getEnergyEffect(); // increases health if HealthItem
+					startGPA += selectedItem.getGpaEffect(); // increases GPA if GpaItem
 					
-					if (currentHealth >= 100) {
-						currentHealth = 100;
+					if (startHealth >= 100) {
+						startHealth = 100;
 					}
 					
-					if (currentGPA >= 4.0) {
-						currentGPA = 4.0;
+					if (startGPA >= 4.0) {
+						startGPA = 4.0;
 					}
 					
 					backpackArr[backpackInput] = null; // item is removed from inventory
